@@ -1,0 +1,21 @@
+---
+input-file: kinematics.md
+output-file: tex/kinematics.tex
+
+# additions to latex template
+include-in-header: tex/preamble.tex
+include-before-body: tex/at_document_begin.tex
+# include-after-body: tex/at_document_end.tex
+
+# LaTeX specifications
+pdf-engine: pdflatex
+variables:
+  documentclass: tufte-handout
+  mainfont:
+  sansfont:
+  classoption:
+
+toc: False
+number-sections: false
+# bibliography: kinematics.bib
+...
