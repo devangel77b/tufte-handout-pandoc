@@ -1,51 +1,59 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{svgnames,hyperref}{xcolor}
 %
-\documentclass[
-]{tufte-handout}
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
+\documentclass{tufte-handout}
+
+% preliminary declarations
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp} % provide euro and other symbols
+\RequirePackage{microtype}
+\RequirePackage{amsmath,amsfonts,amssymb} % use AMS math
+
+% From preamble.tex
+\RequirePackage[american]{babel} % for course dates?
+\RequirePackage[american,inputamerican]{isodate} % for course dates?
+%\dateinputformat{american}
+\RequirePackage{amsmath,amsfonts,amssymb} % use AMS math
+\RequirePackage[makeroom]{cancel} % for when I cancel things in math
+\RequirePackage{graphicx} % use graphics
+%\RequirePackage{svg,svg-extract} % check if conflicts with Beamer? 
+\RequirePackage{booktabs} % for nice tables
+\RequirePackage{siunitx}
+\sisetup{per-mode=symbol} % to get e.g. m/s, instead of [m s^{-1}]
+\DeclareSIUnit\foot{ft}
+\DeclareSIUnit\pound{lb}
+\DeclareSIUnit\ounce{oz}
+\DeclareSIUnit\inch{in}
+\DeclareSIUnit\rpm{rpm}
+\DeclareSIUnit\fahrenheit{F}
+\DeclareSIUnit\bit{bit}
+\DeclareSIUnit\byte{B}
+\RequirePackage[version=4]{mhchem} 
+% for chemical stuff, replaces chemfig, chemformula for pandoc compatibility 
+\RequirePackage{upquote}
+\RequirePackage[plain]{fancyref} % \fref, \Fref... 
+\RequirePackage{bibentry} 
+\RequirePackage{sidenotes}
+\RequirePackage{xurl}
+%\RequirePackage{bookmark}
+
+% oddballs to avoid option clashes with tufte
+%\RequirePackage{xcolor}
+
+% svg and minted require shell-escape so make them loaded by user
+%\RequirePackage{minted} % replaces use of listings, for pandoc compatibility
+%\RequirePackage{svg,svg-extract} % use SVG figures
+
+
+
+
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+
 \hypersetup{
   pdftitle={Kinematics notes},
   pdfauthor={Dennis Evangelista},
@@ -55,6 +63,66 @@
 \title{Kinematics notes}
 \author{Dennis Evangelista}
 \date{\today}
+
+\hypersetup{
+$if(title-meta)$
+  pdftitle={$title-meta$},
+$endif$
+$if(author-meta)$
+  pdfauthor={$author-meta$},
+$endif$
+$if(lang)$
+  pdflang={$lang$},
+$endif$
+$if(subject)$
+  pdfsubject={$subject$},
+$endif$
+$if(keywords)$
+  pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+$endif$
+$if(colorlinks)$
+  colorlinks=true,
+  linkcolor={$if(linkcolor)$$linkcolor$$else$Maroon$endif$},
+  filecolor={$if(filecolor)$$filecolor$$else$Maroon$endif$},
+  citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
+  urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$},
+$else$
+$if(boxlinks)$
+$else$
+  hidelinks,
+$endif$
+$endif$
+  pdfcreator={LaTeX via pandoc}}
+
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+$if(subtitle)$
+$if(beamer)$
+$else$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+$endif$
+\subtitle{$subtitle$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+$if(beamer)$
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+$if(titlegraphic)$
+\titlegraphic{\includegraphics{$titlegraphic$}}
+$endif$
+$if(logo)$
+\logo{\includegraphics{$logo$}}
+$endif$
+$endif$
+
 
 \begin{document}
 \end{document}
