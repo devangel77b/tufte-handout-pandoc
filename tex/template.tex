@@ -36,7 +36,7 @@
 \RequirePackage{upquote}
 \RequirePackage[plain]{fancyref} % \fref, \Fref... 
 \RequirePackage{bibentry} 
-\RequirePackage{sidenotes}
+%\RequirePackage{sidenotes}
 \RequirePackage{xurl}
 %\RequirePackage{bookmark}
 
@@ -55,16 +55,6 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \hypersetup{
-  pdftitle={Kinematics notes},
-  pdfauthor={Dennis Evangelista},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-
-\title{Kinematics notes}
-\author{Dennis Evangelista}
-\date{\today}
-
-\hypersetup{
 $if(title-meta)$
   pdftitle={$title-meta$},
 $endif$
@@ -80,49 +70,17 @@ $endif$
 $if(keywords)$
   pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
 $endif$
-$if(colorlinks)$
-  colorlinks=true,
-  linkcolor={$if(linkcolor)$$linkcolor$$else$Maroon$endif$},
-  filecolor={$if(filecolor)$$filecolor$$else$Maroon$endif$},
-  citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
-  urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$},
-$else$
-$if(boxlinks)$
-$else$
   hidelinks,
-$endif$
-$endif$
   pdfcreator={LaTeX via pandoc}}
 
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
-$if(subtitle)$
-$if(beamer)$
-$else$
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-$endif$
-\subtitle{$subtitle$}
-$endif$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 \date{$date$}
-$if(beamer)$
-$if(institute)$
-\institute{$for(institute)$$institute$$sep$ \and $endfor$}
-$endif$
-$if(titlegraphic)$
-\titlegraphic{\includegraphics{$titlegraphic$}}
-$endif$
-$if(logo)$
-\logo{\includegraphics{$logo$}}
-$endif$
-$endif$
-
 
 \begin{document}
+\maketitle
+
+$body$
 \end{document}

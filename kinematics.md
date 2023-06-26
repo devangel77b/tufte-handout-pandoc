@@ -1,5 +1,5 @@
 ---
-title: Kinematics notes
+title: Kinematics and forces
 author: Dennis Evangelista
 date: \today
 ---
@@ -11,11 +11,11 @@ Kinematics is the quantitative study of motion. To describe how an object moves,
 
 ## Position, velocity, acceleration
 
-**Position** is a **vector**[^whatsavector] and describes where an object is in space relative to an established coordinate system. Typical SI units for position are \si{\meter}. I normally use $\vec{r}$, $x$, $y$, or $z$ as variables to describe position, often with an arrow over them to remind myself they are vectors. 
+**Position** is a **vector**[^whatsavector] and describes where an object is in space relative to an established coordinate system. Typical SI units for position are \unit{\meter}. I normally use $\vec{r}$, $x$, $y$, or $z$ as variables to describe position, often with an arrow over them to remind myself they are vectors. 
 
 [^whatsavector]: A vector is a number and a direction. To convince yourself direction matters, imagine flying up from the ground \qty{33}{\meter}, versus flying down into the ground \qty{33}{\meter}; are those different? Would the direction matter? Yes!
 
-**Velocity** is also a vector and describes the **time rate of change of position**. Its units are \si{\meter\per\second}. I normally use $\vec{v}$ to represent velocity. Considering $\Delta$ or $d$ as a "change in", velocity becomes
+**Velocity** is also a vector and describes the **time rate of change of position**. Its units are \unit{\meter\per\second}. I normally use $\vec{v}$ to represent velocity. Considering $\Delta$ or $d$ as a "change in", velocity becomes
 \begin{align}
 \text{velocity}, [\si{\meter\per\second}] &= \dfrac{\text{change in position}}{\text{change in time}} \\
 &= \dfrac{\Delta \vec{x}}{\Delta t} \\
@@ -24,9 +24,10 @@ Kinematics is the quantitative study of motion. To describe how an object moves,
 [^nocalculus] 
 The "time rate of change of position" relationship means that **velocity is like the slope of a position versus time graph,** and that **position is like the area under a velocity versus time graph.** 
 
-[^nocalculus]: The last form, read ``dee x dee tee,'' is how velocity is typically written as a "derivative" in **calculus**, an advanced type of math that was invented partially to make physics easier to understand. You are not responsible for this in Physics 9.
+[^nocalculus]: The last form, read "dee x dee tee," is how velocity is typically written as a "derivative" in **calculus**, an advanced type of math that was invented partially to make physics easier to understand. You are not responsible for this in Physics 9.
 
-**Acceleration** is obtained from doing a Madlibs sort of thing... we take it as the **time rate of change of velocity**. Its units are \si{\meter\per\second\squared}. I normally use $\vec{a}$ to represent acceleration. 
+**Acceleration** is obtained from doing a Madlibs sort of thing... we take it as the **time rate of change of velocity**. Its units are \unit{\meter\per\second\squared}. I normally use $\vec{a}$ to represent acceleration. 
+
 \begin{align}
 \text{acceleration}, [\si{\meter\per\second\squared}] &= \dfrac{\text{change in velociy}}{\text{change in time}} \\
 &= \dfrac{\Delta \vec{v}}{\Delta t} \\
@@ -35,7 +36,7 @@ The "time rate of change of position" relationship means that **velocity is like
 
 The "time rate of change of velocity" relationship means that **acceleration is like the slope[^whatsaccel] of a velocity versus time graph,** and that **velocity is like the area under an acceleration versus time graph.** 
 
-[^whatsaccel]: Remember slope is rise over run in $y=mx+b$ in math; here compare to $x=vt+x_0$ and $v=at+v_0$.
+[^whatsaccel]: Remember slope is rise over run in y=mx+b in math; here compare to x=vt+x0 and v=at+v0.
 
 ## Related scalar quantities
 
@@ -57,16 +58,18 @@ v(t) &= v\ \text{(constant)} \\
 a(t) &= 0
 \end{align}
 
-Examples of 1D motion at constant velocity would include things like a skier moving at \SI{5}{\meter\per\second} north; a softball in space with no forces acting on it; or an object that is not accelerating. The big example fo this is when we pushed people on chairs at constant speed, and also the horizontal component of the marble shooting experiment. 
+Examples of 1D motion at constant velocity would include things like a skier moving at \qty{5}{\meter\per\second} north; a softball in space with no forces acting on it; or an object that is not accelerating. The big example fo this is when we pushed people on chairs at constant speed, and also the horizontal component of the marble shooting experiment. 
 
 ## 1D motion with constant acceleration
 
 The following equations hold for 1D motion with **constant (linear) acceleration**, which means there is a net force acting on the object that makes it go faster or slower. 
+
 \begin{align}
 x(t) &= \dfrac{1}{2} a t^2 + v_0 t + x_0 \\
 v(t) &= at + v_0 \\
 a(t) &= a\ \text{(constant)} 
 \end{align}
+
 Examples of 1D motion with constant acceleration include the case of a ball dropped from the second floor balcony, or a car at a stop light when it hits the accelerator and before shifting gears, or a rocket ship firing a thruster with a specified force output. The big example of this is when we dropped stuff from the balcony; as well as the vertical component of the marble shooting experiment. 
 
 **For this test, do not expect 3D motion or motions that cannot be modeled as either constant velocity or constant acceleration.**
@@ -93,7 +96,7 @@ These have the advantage of giving displacement in terms of the initial and fina
 
 # Forces
 
-**Forces** can come from things like weight (gravity)[^whatsgravity], aerodynamic lift or drag, thrust from an engine, friction from the ground, normal forces from the ground; forces also arise from charges, electric and magnetic fields, reaction forces, etc etc. The SI unit of force is a newton, \si{\newton}, defined as $\qty{1}{\newton}=\qty{1}{\kilo\gram\meter\per\second\squared}$. You may also see force specified as pounds force (lbf) when working with non-SI units (such as in specifying the thrust of a jet engine). The form of Newton's second law used in Physics 9 is
+**Forces** can come from things like weight (gravity)[^whatsgravity], aerodynamic lift or drag, thrust from an engine, friction from the ground, normal forces from the ground; forces also arise from charges, electric and magnetic fields, reaction forces, etc etc. The SI unit of force is a newton, \unit{\newton}, defined as $\qty{1}{\newton}=\qty{1}{\kilo\gram\meter\per\second\squared}$. You may also see force specified as pounds force (lbf) when working with non-SI units (such as in specifying the thrust of a jet engine). The form of Newton's second law used in Physics 9 is
 
 \begin{align}
 \text{net force} &= \text{mass} \cdot \text{acceleration} \\
@@ -111,10 +114,10 @@ These have the advantage of giving displacement in terms of the initial and fina
 ## Newton's laws
 
 1. An object at rest will stay at rest, unless acted upon by an outside force; an object in motion will stay in motion unless acted upon by an outside force. 
-2. If there is an outside force acting, the sum of the forces will equal the time rate of change of momentum[^whatsmomentum]
+2. If there is an outside force acting, the sum of the forces will equal the time rate of change of momentum[^whatsmomentum].
 3. For every action, there is an equal and opposite reaction. 
 
-[^whatsmomentum]: Momentum is $\vec{p} = m \vec{v}$ and is the product of mass and velocity.}. Since in Physics 9 we are usually dealing with objects of constant mass, a simpler version of this law is just $\sum\vec{F} = m \vec{a}$, where $\sum\vec{F}$ is the net force or the sum of the forces, $m$ is mass, and $\vec{a}$ is acceleration. 
+[^whatsmomentum]: Momentum is $\vec{p} = m \vec{v}$ and is the product of mass and velocity. Since in Physics 9 we are usually dealing with objects of constant mass, a simpler version of this law is just $\sum\vec{F} = m \vec{a}$, where $\sum\vec{F}$ is the net force or the sum of the forces, $m$ is mass, and $\vec{a}$ is acceleration. 
 
 The first law could also be viewed as the case of the second law where $\vec{a}=0$, and (together with the third law) is studied most in **statics**[^whats2001], when considering the balance of forces for and within objects that are not accelerating. 
 

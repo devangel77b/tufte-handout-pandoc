@@ -1,0 +1,286 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{svgnames,hyperref}{xcolor}
+%
+\documentclass{tufte-handout}
+
+% preliminary declarations
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp} % provide euro and other symbols
+\RequirePackage{microtype}
+\RequirePackage{amsmath,amsfonts,amssymb} % use AMS math
+
+% From preamble.tex
+\RequirePackage[american]{babel} % for course dates?
+\RequirePackage[american,inputamerican]{isodate} % for course dates?
+%\dateinputformat{american}
+\RequirePackage{amsmath,amsfonts,amssymb} % use AMS math
+\RequirePackage[makeroom]{cancel} % for when I cancel things in math
+\RequirePackage{graphicx} % use graphics
+%\RequirePackage{svg,svg-extract} % check if conflicts with Beamer? 
+\RequirePackage{booktabs} % for nice tables
+\RequirePackage{siunitx}
+\sisetup{per-mode=symbol} % to get e.g. m/s, instead of [m s^{-1}]
+\DeclareSIUnit\foot{ft}
+\DeclareSIUnit\pound{lb}
+\DeclareSIUnit\ounce{oz}
+\DeclareSIUnit\inch{in}
+\DeclareSIUnit\rpm{rpm}
+\DeclareSIUnit\fahrenheit{F}
+\DeclareSIUnit\bit{bit}
+\DeclareSIUnit\byte{B}
+\RequirePackage[version=4]{mhchem} 
+% for chemical stuff, replaces chemfig, chemformula for pandoc compatibility 
+\RequirePackage{upquote}
+\RequirePackage[plain]{fancyref} % \fref, \Fref... 
+\RequirePackage{bibentry} 
+%\RequirePackage{sidenotes}
+\RequirePackage{xurl}
+%\RequirePackage{bookmark}
+
+% oddballs to avoid option clashes with tufte
+%\RequirePackage{xcolor}
+
+% svg and minted require shell-escape so make them loaded by user
+%\RequirePackage{minted} % replaces use of listings, for pandoc compatibility
+%\RequirePackage{svg,svg-extract} % use SVG figures
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\hypersetup{
+  pdftitle={Kinematics and forces},
+  pdfauthor={Dennis Evangelista},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Kinematics and forces}
+\author{Dennis Evangelista}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\hypertarget{kinematics}{%
+\section{Kinematics}\label{kinematics}}
+
+Kinematics is the quantitative study of motion. To describe how an
+object moves, we typically describe its position, velocity, and
+acceleration in some useful coordinate system / coordinate frame.
+
+\hypertarget{position-velocity-acceleration}{%
+\subsection{Position, velocity,
+acceleration}\label{position-velocity-acceleration}}
+
+\textbf{Position} is a
+\textbf{vector}\sidenote{A vector is a number and a direction. To convince yourself direction matters, imagine flying up from the ground \qty{33}{\meter}, versus flying down into the ground \qty{33}{\meter}; are those different? Would the direction matter? Yes!
+
+} and describes where an object is in space relative to an established
+coordinate system. Typical SI units for position are \unit{\meter}. I
+normally use \(\vec{r}\), \(x\), \(y\), or \(z\) as variables to
+describe position, often with an arrow over them to remind myself they
+are vectors.
+
+\textbf{Velocity} is also a vector and describes the \textbf{time rate
+of change of position}. Its units are \unit{\meter\per\second}. I
+normally use \(\vec{v}\) to represent velocity. Considering \(\Delta\)
+or \(d\) as a ``change in'', velocity becomes \begin{align}
+\text{velocity}, [\si{\meter\per\second}] &= \dfrac{\text{change in position}}{\text{change in time}} \\
+&= \dfrac{\Delta \vec{x}}{\Delta t} \\
+&= \dfrac{d\vec{x}}{dt} \\
+\end{align}
+\sidenote{The last form, read "dee x dee tee," is how velocity is typically written as a "derivative" in calculus, an advanced type of math that was invented partially to make physics easier to understand. You are not responsible for this in Physics 9.
+
+} The ``time rate of change of position'' relationship means that
+\textbf{velocity is like the slope of a position versus time graph,} and
+that \textbf{position is like the area under a velocity versus time
+graph.}
+
+\textbf{Acceleration} is obtained from doing a Madlibs sort of
+thing\ldots{} we take it as the \textbf{time rate of change of
+velocity}. Its units are \unit{\meter\per\second\squared}. I normally
+use \(\vec{a}\) to represent acceleration.
+
+\begin{align}
+\text{acceleration}, [\si{\meter\per\second\squared}] &= \dfrac{\text{change in velociy}}{\text{change in time}} \\
+&= \dfrac{\Delta \vec{v}}{\Delta t} \\
+&= \dfrac{d \vec{v}}{dt}
+\end{align}
+
+The ``time rate of change of velocity'' relationship means that
+\textbf{acceleration is like the
+slope\sidenote{Remember slope is rise over run in $y=mx+b$ in math; here compare to $x=vt+x_0$ and $v=at+v_0$.} of a velocity versus time graph,} and that \textbf{velocity is like
+the area under an acceleration versus time graph.}
+
+\hypertarget{related-scalar-quantities}{%
+\subsection{Related scalar quantities}\label{related-scalar-quantities}}
+
+Vector position and \textbf{displacement} are related to the scalar
+quantity \textbf{distance}. \textbf{Distance} will normally be
+considered to be the total distance traveled along a path from
+\(\vec{x}_0\) to \(\vec{x}_f\) and is only a simple number (e.g.\ 50
+miles) so it is a
+\textbf{scalar}\sidenote{A scalar is just a plain old number; distance, temperature, mass don’t really have a direction to them so they are not vectors.
+
+} quantity. \textbf{Displacement} (\(\vec{d}\)) is a vector quantity and
+is normally taken as \(\vec{x}_f - \vec{x}_0\).
+
+Vector velocity is related to the scalar quantity \textbf{speed}. Speed
+is normally either the scalar magnitude of velocity, e.g.~instantaneous
+speed, \(|v|\), or the total distance traveled divided by the total time
+(average speed).
+
+\hypertarget{d-motion-with-constant-velocity}{%
+\subsection{1D motion with constant
+velocity}\label{d-motion-with-constant-velocity}}
+
+The following equations hold for 1D motion at \textbf{constant (linear)
+velocity}, which means the speed \emph{and
+direction}\sidenote{In Physics 9 you are not responsible for circular motion, in which speed might be constant but direction is constantly changing, nor are you responsible for angular velocity
+
+} of the object are not changing:
+
+\begin{align}
+x(t) &= v t + x_0 \\
+v(t) &= v\ \text{(constant)} \\
+a(t) &= 0
+\end{align}
+
+Examples of 1D motion at constant velocity would include things like a
+skier moving at \qty{5}{\meter\per\second} north; a softball in space
+with no forces acting on it; or an object that is not accelerating. The
+big example fo this is when we pushed people on chairs at constant
+speed, and also the horizontal component of the marble shooting
+experiment.
+
+\hypertarget{d-motion-with-constant-acceleration}{%
+\subsection{1D motion with constant
+acceleration}\label{d-motion-with-constant-acceleration}}
+
+The following equations hold for 1D motion with \textbf{constant
+(linear) acceleration}, which means there is a net force acting on the
+object that makes it go faster or slower.
+
+\begin{align}
+x(t) &= \dfrac{1}{2} a t^2 + v_0 t + x_0 \\
+v(t) &= at + v_0 \\
+a(t) &= a\ \text{(constant)} 
+\end{align}
+
+Examples of 1D motion with constant acceleration include the case of a
+ball dropped from the second floor balcony, or a car at a stop light
+when it hits the accelerator and before shifting gears, or a rocket ship
+firing a thruster with a specified force output. The big example of this
+is when we dropped stuff from the balcony; as well as the vertical
+component of the marble shooting experiment.
+
+\textbf{For this test, do not expect 3D motion or motions that cannot be
+modeled as either constant velocity or constant acceleration.}
+
+\hypertarget{alternate-form-of-equations}{%
+\subsection{Alternate form of
+equations}\label{alternate-form-of-equations}}
+
+When working with
+displacement\sidenote{$d$ here means displacement and does not mean "change in"
+
+} \(d\), alternate forms of the equations of motion for constant
+accelerations
+are\sidenote{See The Physics Classroom, https://www.physicsclassroom.com
+
+}
+
+\begin{align}
+d &= v_i t + \dfrac{1}{2} a t^2 \\
+v_f^2 &= v_i^2 + 2 a d \\
+v_f &= v_i + a t \\
+d &= \dfrac{v_i+v_f}{2} t \\
+\end{align}
+
+These have the advantage of giving displacement in terms of the initial
+and final velocities (\(v_i\) and \(v_f\), respectively), the
+acceleration \(a\) and the time \(t\). All are equivalent so use
+whatever form you are most comfortable with. CrossRefHere2 can be
+derived from energy conservation and provides a handy way to find final
+velocity when displacement is known. CrossRefHere3 has a term related to
+the average speed \(\dfrac{v_i+v_f}{2}\) during the time interval \(t\)
+(sometimes given as \(\Delta t\)); which may be useful when considering
+what quantities a problem wishes you to compute.
+
+\hypertarget{forces}{%
+\section{Forces}\label{forces}}
+
+\textbf{Forces} can come from things like weight
+(gravity)\sidenote{The force of gravity on an object of mass m is $F = mg$ directed downwards, where $g=\qty{9.8}{\meter\per\second\squared}$ is the acceleration of gravity at the surface of the Earth. You can also get this from Newton’s second law. $g$ will be provided for you in the equation sheet.
+
+}, aerodynamic lift or drag, thrust from an engine, friction from the
+ground, normal forces from the ground; forces also arise from charges,
+electric and magnetic fields, reaction forces, etc etc. The SI unit of
+force is a newton, \unit{\newton}, defined as
+\(\qty{1}{\newton}=\qty{1}{\kilo\gram\meter\per\second\squared}\). You
+may also see force specified as pounds force (lbf) when working with
+non-SI units (such as in specifying the thrust of a jet engine). The
+form of Newton's second law used in Physics 9 is
+
+\begin{align}
+\text{net force} &= \text{mass} \cdot \text{acceleration} \\
+\sum\vec{F} &= m\vec{a}
+\end{align}
+
+\hypertarget{free-body-diagrams}{%
+\subsection{Free body diagrams}\label{free-body-diagrams}}
+
+\textbf{Free body diagrams} are ways to visualize the force acting on an
+object. The object is drawn isolated from the rest of the universe, and
+arrows are used to show the forces that are acting on it and their
+location and directions. This is a useful tool in analyzing the
+mechanics of all sorts of things, but \textbf{for this test you may only
+be asked to draw free body diagrams of very simple
+situations}\sidenote{For example, falling objects with or without air drag; rockets sitting on a launch pad, etc.
+
+}.
+
+\hypertarget{newtons-laws}{%
+\subsection{Newton's laws}\label{newtons-laws}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  An object at rest will stay at rest, unless acted upon by an outside
+  force; an object in motion will stay in motion unless acted upon by an
+  outside force.
+\item
+  If there is an outside force acting, the sum of the forces will equal
+  the time rate of change of
+  momentum\sidenote{Momentum is $\vec{p} = m \vec{v}$ and is the product of mass and velocity. Since in Physics 9 we are usually dealing with objects of constant mass, a simpler version of this law is just $\sum\vec{F} = m \vec{a}$, where $\sum\vec{F}$ is the net force or the sum of the forces, $m$ is mass, and $\vec{a}$ is acceleration.
+  }
+\item
+  For every action, there is an equal and opposite reaction.
+\end{enumerate}
+
+The first law could also be viewed as the case of the second law where
+\(\vec{a}=0\), and (together with the third law) is studied most in
+\textbf{statics}\sidenote{First course taken by many engineers in college…
+
+}, when considering the balance of forces for and within objects that
+are not accelerating.
+
+The second law shows up most in cases where objects are accelerating,
+such as in studies of vehicles, maneuvers, propulsion systems, or
+generally in
+\textbf{dynamics}\sidenote{Second course taken by many engineers in college…
+
+}.
+
+The third law does not show up very often; one place in engineering is
+when an object pushing on the ground or some other object, the force it
+feels is often called the \textbf{reaction force} and given the symbol
+\(R\) in reference to the third law.
+\end{document}
