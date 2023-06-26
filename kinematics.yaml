@@ -1,6 +1,7 @@
 ---
 input-file: kinematics.md
 output-file: tex/kinematics.tex
+to: latex
 
 # additions to latex template
 template: tex/template.tex
@@ -10,7 +11,7 @@ pdf-engine: pdflatex
 
 # filters
 filters:
-  - /Users/dennis/.pandoc/filters/latex-sidenote.py
+  - filters/latex-sidenote.py
 
 toc: False
 number-sections: false
