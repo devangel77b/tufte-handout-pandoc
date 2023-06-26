@@ -1,4 +1,4 @@
-#!\usr\bin\env python
+#! \usr\bin\env python3
 
 import panflute as pf
 import parse
@@ -11,10 +11,10 @@ def latex_sidenote(e, doc):
         if (type(e0 := e.content[0])==pf.Para):
             l = e0.content
             if (l[0]==pf.Str("{-}")):
-                l.pop
+                l.pop()
                 l.insert(0,pf.RawInline("\marginnote{",format="latex"))
             elif (l[0]==pf.Str("{.}")):
-                l.pop
+                l.pop()
                 l.insert(0,pf.RawInline("\footnote{",format="latex"))
             else:
                 l.insert(0,pf.RawInline("\sidenote{",format="latex"))
