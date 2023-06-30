@@ -81,7 +81,7 @@ $$v_f^2 = v_i^2 + 2 a d $${#eq:tpc2}
 $$v_f = v_i + a t $$
 $$d = \dfrac{v_i+v_f}{2} t $${#eq:tpc4}
 
-These have the advantage of giving displacement in terms of the initial and final velocities ($v_i$ and $v_f$, respectively), the acceleration $a$ and the time $t$. All are equivalent so use whatever form you are most comfortable with. {@eq:tpc2} can be derived from energy conservation and provides a handy way to find final velocity when displacement is known. {@eq:tpc4} has a term related to the average speed $\dfrac{v_i+v_f}{2}$ during the time interval $t$ (sometimes given as $\Delta t$); which may be useful when considering what quantities a problem wishes you to compute. 
+These have the advantage of giving displacement in terms of the initial and final velocities ($v_i$ and $v_f$, respectively), the acceleration $a$ and the time $t$. All are equivalent so use whatever form you are most comfortable with. @Eq:tpc2 can be derived from energy conservation and provides a handy way to find final velocity when displacement is known. @Eq:tpc4 has a term related to the average speed $\dfrac{v_i+v_f}{2}$ during the time interval $t$ (sometimes given as $\Delta t$); which may be useful when considering what quantities a problem wishes you to compute. 
 
 
 

@@ -3,7 +3,7 @@ input-file: kinematics-forces.md
 output-file: tex/kinematics-forces.tex
 to: latex
 
-# additions to latex template
+# use this template
 template: tex/template.tex
 
 # LaTeX specifications
@@ -11,8 +11,13 @@ pdf-engine: pdflatex
 
 # filters
 filters:
-  - filters/latex-sidenote.py
-  - filters/latex-printdate.py
+  - filters/pandoc2tufte.py
+  - pandoc-crossref
+
+cite-method: natbib
+
+metadata:
+  cref: True
 
 toc: False
 number-sections: false
