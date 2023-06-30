@@ -18,6 +18,7 @@ cite-method: natbib
 
 metadata:
   cref: True
+  autoEqnLabel: True
 
 toc: False
 number-sections: false

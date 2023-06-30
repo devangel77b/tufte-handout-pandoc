@@ -67,6 +67,10 @@
 %{\begin{flushright}\footnotesize\upshape}
 %{\end{flushright}}
 
+% If you want all equations to be numbered
+\RenewDocumentCommand{\[}{}{\begin{equation}}
+\RenewDocumentCommand{\]}{}{\end{equation}}
+
 
 
 \setlength{\emergencystretch}{3em} % prevent overfull lines
