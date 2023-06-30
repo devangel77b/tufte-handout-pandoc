@@ -4,3 +4,6 @@
 [submodule "tufte-pandoc-css"]
 	path = tufte-pandoc-css
 	url = https://github.com/jez/tufte-pandoc-css
+[submodule "pandoc2tufte"]
+	path = filters
+	url = git@github.com:devangel77b/pandoc2tufte.git
