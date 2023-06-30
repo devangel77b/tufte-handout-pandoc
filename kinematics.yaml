@@ -1,6 +1,6 @@
 ---
-input-file: kinematics.md
-output-file: tex/kinematics.tex
+input-file: kinematics-forces.md
+output-file: tex/kinematics-forces.tex
 to: latex
 
 # additions to latex template
@@ -12,6 +12,7 @@ pdf-engine: pdflatex
 # filters
 filters:
   - filters/latex-sidenote.py
+  - filters/latex-printdate.py
 
 toc: False
 number-sections: false
