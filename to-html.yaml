@@ -1,0 +1,36 @@
+---
+input-file: kinematics-forces.md
+output-file: html/kinematics-forces.html
+to: html5+smart
+
+css:
+  - tufte.css
+  - tufte-extra.css
+  - pandoc.css
+#   - tufte-css/tufte.css
+#   - tufte-pandoc-css/tufte-extra.css
+#   - tufte-panddc-css/pandoc.css
+   
+html-math-method:
+  method: mathml
+
+# use this template
+template: tufte-pandoc-css/tufte.html5
+
+# filters
+filters:
+  - pandoc-sidenote
+  - pandoc-crossref
+
+cite-method: natbib
+
+shift-heading-level-by: 1
+section-divs: True
+
+metadata:
+  autoEqnLabels: True
+
+toc: False
+# number-sections: false
+# bibliography: kinematics.bib
+...
