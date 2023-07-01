@@ -1,0 +1,53 @@
+---
+input-file: kinematics-forces.md
+output-file: epub/kinematics-forces.epub
+to: epub3
+
+standalone: true
+
+#resource-path:
+# - .
+# - ${.}/img
+# - ${.}/epub
+# - ${.}/tufte-css
+# - ${.}/tufte-pandoc-css
+
+epub-fonts:
+- et-book/et-book-bold-line-figures/*
+- et-book/et-book-display-italic-old-style-figures/*
+- et-book/et-book-roman-line-figures/*
+- et-book/et-book-roman-old-style-figures/*
+- et-book/et-book-semi-bold-old-style-figures/*
+
+css:
+  - tufte-epub.css
+  - tufte-pandoc-css/tufte-extra.css
+  - tufte-pandoc-css/pandoc.css
+   
+html-math-method:
+  method: mathml
+
+# use this template
+#template: tufte-pandoc-css/tufte.html5
+template: epub/default.epub3
+
+# filters
+filters:
+  - pandoc-sidenote
+  - pandoc-crossref
+
+cite-method: natbib
+
+shift-heading-level-by: 1
+section-divs: True
+
+metadata-files:
+  - meta.yaml
+
+metadata:
+  autoEqnLabels: True
+
+toc: True
+# number-sections: false
+# bibliography: kinematics.bib
+...

@@ -11,6 +11,7 @@ pdf-engine: pdflatex
 
 # filters
 filters:
+  - pandoc-siunitx
   - filters/pandoc2tufte.py
   - pandoc-crossref
 

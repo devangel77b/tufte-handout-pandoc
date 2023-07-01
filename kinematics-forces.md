@@ -1,7 +1,8 @@
 ---
-title: Kinematics and forces
+title: Kinematics and Forces
 author: Dennis Evangelista
-date: \today
+date: 'June 30, 2023'
+lang: en-US
 ---
 
 
@@ -11,11 +12,11 @@ Kinematics is the quantitative study of motion. To describe how an object moves,
 
 ## Position, velocity, acceleration
 
-**Position** is a **vector**[^whatsavector] and describes where an object is in space relative to an established coordinate system. Typical SI units for position are \unit{\meter}. I normally use $\vec{r}$, $x$, $y$, or $z$ as variables to describe position, often with an arrow over them to remind myself they are vectors. 
+**Position** is a **vector**[^whatsavector] and describes where an object is in space relative to an established coordinate system. Typical SI units for position are $\unit{\meter}$. I normally use $\vec{r}$, $x$, $y$, or $z$ as variables to describe position, often with an arrow over them to remind myself they are vectors. 
 
-[^whatsavector]: A vector is a number and a direction. To convince yourself direction matters, imagine flying up from the ground \qty{33}{\meter}, versus flying down into the ground \qty{33}{\meter}; are those different? Would the direction matter? Yes!
+[^whatsavector]: A vector is a number and a direction. To convince yourself direction matters, imagine flying up from the ground $\qty{33}{\meter}$, versus flying down into the ground $\qty{33}{\meter}$; are those different? Would the direction matter? Yes!
 
-**Velocity** is also a vector and describes the **time rate of change of position**. Its units are \unit{\meter\per\second}. I normally use $\vec{v}$ to represent velocity. Considering $\Delta$ or $d$ as a "change in", velocity becomes
+**Velocity** is also a vector and describes the **time rate of change of position**. Its units are $\unit{\meter\per\second}$. I normally use $\vec{v}$ to represent velocity. Considering $\Delta$ or $d$ as a "change in", velocity becomes
 
 $$\text{velocity}, [\si{\meter\per\second}] = \dfrac{\text{change in position}}{\text{change in time}}$$
 $$ = \dfrac{\Delta \vec{x}}{\Delta t}$$
@@ -26,7 +27,7 @@ The "time rate of change of position" relationship means that **velocity is like
 
 [^nocalculus]: The last form, read "dee x dee tee," is how velocity is typically written as a "derivative" in **calculus**, an advanced type of math that was invented partially to make physics easier to understand. You are not responsible for this in Physics 9.
 
-**Acceleration** is obtained from doing a Madlibs sort of thing... we take it as the **time rate of change of velocity**. Its units are \unit{\meter\per\second\squared}. I normally use $\vec{a}$ to represent acceleration. 
+**Acceleration** is obtained from doing a Madlibs sort of thing... we take it as the **time rate of change of velocity**. Its units are $\unit{\meter\per\second\squared}$. I normally use $\vec{a}$ to represent acceleration. 
 
 $$\text{acceleration}, [\si{\meter\per\second\squared}] = \dfrac{\text{change in velociy}}{\text{change in time}}$$
 $$= \dfrac{\Delta \vec{v}}{\Delta t}$$
@@ -34,7 +35,7 @@ $$= \dfrac{d \vec{v}}{dt}$$
 
 The "time rate of change of velocity" relationship means that **acceleration is like the slope[^whatsaccel] of a velocity versus time graph,** and that **velocity is like the area under an acceleration versus time graph.** 
 
-[^whatsaccel]: Remember slope is rise over run in y=mx+b in math; here compare to x=vt+x0 and v=at+v0.
+[^whatsaccel]: Remember slope is rise over run in $y=mx+b$ in math; here compare to $x=vt+x_0$ and $v=at+v_0$.
 
 ## Related scalar quantities
 
@@ -54,7 +55,7 @@ $$x(t) = v t + x_0$$
 $$v(t) = v\ \text{(constant)}$$
 $$a(t) = 0$$
 
-Examples of 1D motion at constant velocity would include things like a skier moving at \qty{5}{\meter\per\second} north; a softball in space with no forces acting on it; or an object that is not accelerating. The big example fo this is when we pushed people on chairs at constant speed, and also the horizontal component of the marble shooting experiment. 
+Examples of 1D motion at constant velocity would include things like a skier moving at $\qty{5}{\meter\per\second}$ north; a softball in space with no forces acting on it; or an object that is not accelerating. The big example fo this is when we pushed people on chairs at constant speed, and also the horizontal component of the marble shooting experiment. 
 
 ## 1D motion with constant acceleration
 
@@ -88,7 +89,7 @@ These have the advantage of giving displacement in terms of the initial and fina
 
 # Forces
 
-**Forces** can come from things like weight (gravity)[^whatsgravity], aerodynamic lift or drag, thrust from an engine, friction from the ground, normal forces from the ground; forces also arise from charges, electric and magnetic fields, reaction forces, etc etc. The SI unit of force is a newton, \unit{\newton}, defined as $\qty{1}{\newton}=\qty{1}{\kilo\gram\meter\per\second\squared}$. You may also see force specified as pounds force (lbf) when working with non-SI units (such as in specifying the thrust of a jet engine). The form of Newton's second law used in Physics 9 is
+**Forces** can come from things like weight (gravity)[^whatsgravity], aerodynamic lift or drag, thrust from an engine, friction from the ground, normal forces from the ground; forces also arise from charges, electric and magnetic fields, reaction forces, etc etc. The SI unit of force is a newton, $\unit{\newton}$, defined as $\qty{1}{\newton}=\qty{1}{\kilo\gram\meter\per\second\squared}$. You may also see force specified as pounds force (lbf) when working with non-SI units (such as in specifying the thrust of a jet engine). The form of Newton's second law used in Physics 9 is
 
 $$\text{net force} = \text{mass} \cdot \text{acceleration} $$
 $$\sum\vec{F} = m\vec{a} $$
