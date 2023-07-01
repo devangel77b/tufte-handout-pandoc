@@ -11,7 +11,6 @@ pdf-engine: pdflatex
 
 # filters
 filters:
-  - pandoc-siunitx
   - filters/pandoc2tufte.py
   - pandoc-crossref
 
@@ -19,7 +18,7 @@ cite-method: natbib
 
 metadata:
   cref: True
-  autoEqnLabel: True
+  autoEqnLabels: True
 
 toc: False
 number-sections: false
